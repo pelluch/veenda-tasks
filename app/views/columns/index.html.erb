@@ -1,0 +1,23 @@
+<h1>Listing columns</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @columns.each do |column| %>
+  <tr>
+    <td><%= column.project_id %></td>
+    <td><%= link_to 'Show', column %></td>
+    <td><%= link_to 'Edit', edit_column_path(column) %></td>
+    <td><%= link_to 'Destroy', column, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Column', new_column_path %>
