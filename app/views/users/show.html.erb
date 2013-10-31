@@ -1,0 +1,7 @@
+<% if @user %>
+
+Welcome, <%= @user.name %>
+	<% if @user_info %>
+		<%= image_tag @user_info["gravatar_url"] %>
+	<% end %>
+<% end %>
