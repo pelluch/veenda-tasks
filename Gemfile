@@ -10,11 +10,10 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
-  gem 'seed_dump'
 end
 
 gem 'httparty'
-
+gem 'json'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
