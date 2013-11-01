@@ -1,5 +1,8 @@
 VeendaTasks::Application.routes.draw do
 
+  resources :veenda_tests
+
+
   match '/*path' => 'application#cors_preflight_check', :via => :options
 
   resources :bugs

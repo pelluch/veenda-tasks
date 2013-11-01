@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131101014924) do
+ActiveRecord::Schema.define(:version => 20131101022018) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "task_id"
@@ -75,6 +75,15 @@ ActiveRecord::Schema.define(:version => 20131101014924) do
     t.string   "last_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "veenda_tests", :force => true do |t|
+    t.integer  "tester_id"
+    t.integer  "developer_id"
+    t.string   "description"
+    t.string   "result"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "workspaces", :force => true do |t|
