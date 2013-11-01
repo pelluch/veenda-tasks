@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
   
   after_filter :cors_set_access_control_headers
 
+	# Force signout to prevent CSRF attacks
+	def handle_unverified_request
+		sign_out
+		super
+	end
+	
 	def cors_preflight_check
 	  logger.info ">>> responding to CORS request"
 	  render :text => '', :content_type => 'text/plain'
