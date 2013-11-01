@@ -8,10 +8,11 @@ gem 'rails', '3.2.13'
 group :production do
   gem 'pg'
 end
-group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
-end
+#group :development, :test do
+#  gem 'rspec-rails', '~> 2.0'
+#end
 
+gem 'rails_12factor'
 gem 'httparty'
 gem 'json'
 # Gems used only for assets and not required
