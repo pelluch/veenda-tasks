@@ -2,12 +2,13 @@ class UsersController < ApplicationController
 
     require 'httparty'
 
-    before_filter :signed_in_user, only: [:edit, :update]
+    before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
     before_filter :correct_user,   only: [:edit, :update]
+    before_filter :admin_user,     only: :destroy
 
     # List all users
     def index
-        @users = User.all
+        @users = User.paginate(page: params[:page])
     end
 
   def update
@@ -21,6 +22,12 @@ class UsersController < ApplicationController
   end
 
     def edit
+    end
+
+    def destroy
+      User.find(params[:id]).destroy
+      flash[:success] = "User destroyed."
+      redirect_to users_url
     end
 
     def show
@@ -61,6 +68,10 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 
 end
