@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tester:</b>
+  <%= @veenda_test.tester_id %>
+</p>
+
+<p>
+  <b>Developer:</b>
+  <%= @veenda_test.developer_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @veenda_test.description %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%= @veenda_test.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_veenda_test_path(@veenda_test) %> |
+<%= link_to 'Back', veenda_tests_path %>
