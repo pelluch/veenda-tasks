@@ -4,12 +4,15 @@ class UsersController < ApplicationController
 
     before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
     before_filter :correct_user,   only: [:edit, :update]
-    before_filter :admin_user,     only: :destroy
+    before_filter :admin_user,     only: [:destroy, :panel]
 
     # List all users
     def index
         @users = User.paginate(page: params[:page])
     end
+
+  def panel
+  end
 
   def update
     if @user.update_attributes(params[:user])
