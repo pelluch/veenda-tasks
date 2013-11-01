@@ -1,6 +1,9 @@
 VeendaTasks::Application.routes.draw do
 
 
+  get "static_pages/home"
+  get "static_pages/help"
+
   match '/*path' => 'application#cors_preflight_check', :via => :options
 
   resources :veenda_tests
@@ -71,8 +74,8 @@ VeendaTasks::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'users#index'
-   match '/' => 'users#idex', :as => :root_path
+   root :to => 'static_pages#home'
+   match '/' => 'static_pages#home', :as => :root_path
 
   # See how all your routes lay out with "rake routes"
 
