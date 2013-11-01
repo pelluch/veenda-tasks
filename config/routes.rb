@@ -12,11 +12,16 @@ VeendaTasks::Application.routes.draw do
   resources :columns
   resources :workspaces
   resources :projects
+  resources :sessions, only: [:new, :create, :destroy]
 
   post '/updates' => 'updates#create'
   delete '/updates' => 'updates#destroy'
   put '/updates' => 'updates#update'
 
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signup',  to: 'users#new'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

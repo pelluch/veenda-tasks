@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 	
-  protect_from_forgery secret: "8493c8a995d4c90767c529e87b844b09e5a5e542"
-
+  #protect_from_forgery secret: "8493c8a995d4c90767c529e87b844b09e5a5e542"
+  include SessionsHelper
+  
   after_filter :cors_set_access_control_headers
 
 	def cors_preflight_check
