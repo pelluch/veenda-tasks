@@ -16,6 +16,10 @@ gem 'rails_12factor'
 gem 'httparty'
 gem 'json'
 
+group :development do
+  gem 'annotate', '2.5.0'
+end
+
 group :assets do
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
@@ -25,5 +29,5 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.1'
 

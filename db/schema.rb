@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131101024924) do
+ActiveRecord::Schema.define(:version => 20131101042549) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "task_id"
@@ -64,10 +64,11 @@ ActiveRecord::Schema.define(:version => 20131101024924) do
     t.string   "name"
     t.string   "api_token"
     t.string   "last_name"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "remember_token"
     t.string   "email"
+    t.string   "password_digest"
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
