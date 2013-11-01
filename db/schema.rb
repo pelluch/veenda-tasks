@@ -50,15 +50,6 @@ ActiveRecord::Schema.define(:version => 20131101022018) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "tests", :force => true do |t|
-    t.integer  "tester_id"
-    t.integer  "developer_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "description"
-    t.string   "result"
-  end
-
   create_table "updates", :force => true do |t|
     t.integer  "resource_type"
     t.integer  "update_type"
