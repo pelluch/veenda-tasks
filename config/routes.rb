@@ -1,7 +1,6 @@
 VeendaTasks::Application.routes.draw do
 
-  resources :updates
-
+  match '/*path' => 'application#cors_preflight_check', :via => :options
 
   resources :bugs
   resources :tests
@@ -12,6 +11,10 @@ VeendaTasks::Application.routes.draw do
   resources :columns
   resources :workspaces
   resources :projects
+
+  post '/updates' => 'updates#create'
+  delete '/updates' => 'updates#destroy'
+  put '/updates' => 'updates#update'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
