@@ -13,9 +13,10 @@
 # gem 'pg'
 #
 development:
-  adapter: sqlite3
+  adapter: postgresql
   encoding: unicode
-  database: db/development.sqlite3
+  database: veenda-tasks_development
+  username: veenda-tasks
   pool: 5
   password:
 

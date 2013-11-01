@@ -1,5 +1,8 @@
 VeendaTasks::Application.routes.draw do
 
+  resources :updates
+
+
   resources :bugs
   resources :tests
   resources :users
