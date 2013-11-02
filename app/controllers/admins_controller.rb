@@ -24,7 +24,7 @@ class AdminsController < UsersController
 					membership.updated_at = m["updated_at"]
 					membership.save
 				end
-				flash[:success] = "Sucess"
+				flash[:success] = "Sucessfully initialized memberships"
 			redirect_to admins_panel_path
 			else
 				flash[:error] = "Error initializing memberships"
@@ -52,7 +52,7 @@ class AdminsController < UsersController
 					task_type.updated_at = t["updated_at"]
 					task_type.save
 				end
-				flash[:success] = "Sucess"
+				flash[:success] = "Sucessfully initialized task types"
 			redirect_to admins_panel_path
 			else
 				flash[:error] = "Error initializing task types"
@@ -78,7 +78,7 @@ class AdminsController < UsersController
 					estimate.updated_at = e["updated_at"]
 					estimate.save
 				end
-				flash[:success] = "Sucess"
+				flash[:success] = "Sucessfully initialized estimates"
 			redirect_to admins_panel_path
 			else
 				flash[:error] = "Error initializing estimates"
@@ -107,7 +107,7 @@ class AdminsController < UsersController
 					column.updated_at = c["updated_at"]
 					column.save
 				end
-				flash[:success] = "Sucess"
+				flash[:success] = "Sucessfully initialized columns"
 			redirect_to admins_panel_path
 			else
 				flash[:error] = "Error initializing columns"

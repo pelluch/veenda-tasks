@@ -6,7 +6,7 @@
 #  column_id     :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  title         :string(255)
+#  title         :text
 #  task_type_id  :integer
 #  creator_id    :integer
 #  description   :text
@@ -18,8 +18,8 @@
 #  blocked       :boolean
 #  moved_at      :datetime
 #  type          :string(255)
-#  archived      :boolean
-#  iceboxed      :boolean
+#  archived      :boolean          default(FALSE)
+#  iceboxed      :boolean          default(FALSE)
 #
 
 class Task < ActiveRecord::Base
