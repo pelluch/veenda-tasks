@@ -140,6 +140,7 @@ class AdminsController < UsersController
 					task.created_at = t["created_at"]
 					task.updated_at = t["updated_at"]
 					task.moved_at = t["moved_at"]
+					task.title = t["title"]
 
 					task.type = t["type"]
 					task.archived = false
@@ -168,6 +169,7 @@ class AdminsController < UsersController
 					task.updated_at = t["updated_at"]
 					task.moved_at = t["moved_at"]
 					task.type = t["type"]
+					task.title = t["title"]
 					task.archived = true
 					task.iceboxed = false
 					task.save
@@ -194,6 +196,7 @@ class AdminsController < UsersController
 					task.updated_at = t["updated_at"]
 					task.moved_at = t["moved_at"]
 					task.type = t["type"]
+					task.title = t["title"]
 					task.archived = false
 					task.iceboxed = true
 					task.save

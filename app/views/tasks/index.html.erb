@@ -1,23 +1,10 @@
-<h1>Listing tasks</h1>
+<% provide(:title, 'Summary') %>
+<h1>Tasks in progress</h1>
 
-<table>
-  <tr>
-    <th>Column</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= will_paginate %>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.column_id %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="tasks">
+  <%= render @tasks %>
+</ul>
 
-<br />
-
-<%= link_to 'New Task', new_task_path %>
+<%= will_paginate %>

@@ -7,9 +7,19 @@ VeendaTasks::Application.routes.draw do
   resources :estimates
   resources :task_types
   resources :project_memberships
+  resources :veenda_tests
+  resources :bugs
+  resources :users
+  resources :subtasks
+  resources :comments
+  resources :tasks
+  resources :columns
+  resources :workspaces
+  resources :projects
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/*path' => 'application#cors_preflight_check', :via => :options
-  root to: 'static_pages#home'
+  root to: 'tasks#index'
 
   match '/admins/panel', to: 'admins#panel'
   match '/admins/init_memberships', to: 'admins#init_memberships'
@@ -26,20 +36,10 @@ VeendaTasks::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-
+  match '/home', to: 'static_pages#home'
   
 
-  resources :veenda_tests
-  resources :bugs
-  resources :users
-  resources :subtasks
-  resources :comments
-  resources :tasks
-  resources :columns
-  resources :workspaces
-  resources :projects
-  resources :sessions, only: [:new, :create, :destroy]
-
+  
   post '/updates' => 'updates#create'
   delete '/updates' => 'updates#destroy'
   put '/updates' => 'updates#update'
