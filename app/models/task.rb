@@ -9,7 +9,7 @@
 #  title         :string(255)
 #  task_type_id  :integer
 #  creator_id    :integer
-#  description   :string(255)
+#  description   :text
 #  estimate_id   :integer
 #  owner_id      :integer
 #  position      :integer
@@ -18,6 +18,8 @@
 #  blocked       :boolean
 #  moved_at      :datetime
 #  type          :string(255)
+#  archived      :boolean
+#  iceboxed      :boolean
 #
 
 class Task < ActiveRecord::Base

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131102054948) do
+ActiveRecord::Schema.define(:version => 20131102222349) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "task_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20131102054948) do
     t.integer  "task_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "body"
+    t.text     "body"
     t.integer  "author_id"
     t.string   "type"
   end
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20131102054948) do
     t.string   "title"
     t.integer  "task_type_id"
     t.integer  "creator_id"
-    t.string   "description"
+    t.text     "description"
     t.integer  "estimate_id"
     t.integer  "owner_id"
     t.integer  "position"
@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(:version => 20131102054948) do
     t.boolean  "blocked"
     t.datetime "moved_at"
     t.string   "type"
+    t.boolean  "archived"
+    t.boolean  "iceboxed"
   end
 
   create_table "updates", :force => true do |t|

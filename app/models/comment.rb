@@ -6,7 +6,7 @@
 #  task_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  body       :string(255)
+#  body       :text
 #  author_id  :integer
 #  type       :string(255)
 #

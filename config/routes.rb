@@ -11,8 +11,17 @@ VeendaTasks::Application.routes.draw do
   match '/*path' => 'application#cors_preflight_check', :via => :options
   root to: 'static_pages#home'
 
-  match '/panel', to: 'admins#panel'
-  match '/init_project', to: 'admins#init_project'
+  match '/admins/panel', to: 'admins#panel'
+  match '/admins/init_memberships', to: 'admins#init_memberships'
+  match '/admins/init_task_types', to: 'admins#init_task_types'
+  match '/admins/init_estimates', to: 'admins#init_estimates'
+  match '/admins/init_columns', to: 'admins#init_columns'
+  match '/admins/init_tasks', to: 'admins#init_tasks'
+  match '/admins/init_task_subscriptions', to: 'admins#init_task_subscriptions'
+  match '/admins/init_comments', to: 'admins#init_comments'
+  match '/admins/init_subtasks', to: 'admins#init_comments'
+  match '/admins/init_issues', to: 'admins#init_issues'
+
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
