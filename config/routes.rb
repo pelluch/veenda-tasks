@@ -6,13 +6,13 @@ VeendaTasks::Application.routes.draw do
   resources :task_subscriptions
   resources :estimates
   resources :task_types
-  resources :project_memeberships
+  resources :project_memberships
 
   match '/*path' => 'application#cors_preflight_check', :via => :options
   root to: 'static_pages#home'
 
   match '/panel', to: 'admins#panel'
-  match '/init_workspace', to: 'admins#init_workspace'
+  match '/init_project', to: 'admins#init_project'
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

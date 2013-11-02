@@ -1,6 +1,6 @@
-class CreateProjectMemeberships < ActiveRecord::Migration
+class CreateProjectMemberships < ActiveRecord::Migration
   def change
-    create_table :project_memeberships do |t|
+    create_table :project_memberships do |t|
       t.string :email
       t.string :permission
       t.integer :project_id

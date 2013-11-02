@@ -7,35 +7,36 @@ class AdminsController < UsersController
 	def panel
 	end
 
-	def init_workspace
-		if Workspace.count == 0
-			info = Kanbanery::get_workspace_projects(current_user)
-			workspace_attrs = { }
-			if info 
-				workspace_attrs[:name] = info[0]["name"]
-				workspace_attrs[:type] = info[0]["type"]
-				w = Workspace.new(workspace_attrs)
-				w.id = info[0]["id"].to_i
-				w.save
-				info[0]["projects"].each do |project|
-					project_attrs = {}
-					project_attrs[:workspace_id] = w.id
-					project_attrs[:type] = project["type"]
-					project_attrs[:name] = project["name"]
-					project_attrs[:url] = "https://" + w.name + ".Kanbanery.com/projects/" + project["id"].to_s
-					p = Project.new(project_attrs)
-					p.id = project["id"].to_i
-					p.save
-				end
-				flash.now[:success] = "Success in creating workspace " + w.id.to_s
-				render 'panel'
-			else
-				flash.now[:error] = "Error getting workspace information"
+	def init_project
+		if ProjectMembership.count == 0
+			if not init_memberships
+				flash.now[:error] = "Error initializing memberships"
 				render 'panel'
 			end
-		else
-			flash.now[:error] = "Workspace already exists!"
+			flash.now[:success] = "Sucess"
 			render 'panel'
+		else
+			flash.now[:error] = "Project has already been initialized"
+			render 'panel'
+		end
+	end
+
+	def init_memberships
+		memberships = Kanbanery::get_memberships(current_user)
+		if memberships 
+			memberships.each do |m|
+				membership = ProjectMembership.new
+				membership.id = m["id"]
+				membership.email = m["email"]
+				membership.permission = m["permission"]
+				membership.project_id = m["project_id"]
+				membership.user_id = m["user_id"]
+				membership.type = m["type"]
+				membership.save
+			end
+			true
+		else
+			false
 		end
 	end
 end

@@ -10,6 +10,11 @@
 #
 
 class Workspace < ActiveRecord::Base
+
+	require 'httparty'
+	
 	attr_accessible :name, :type	
-	has_many :projects
+
+	
+
 end

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: project_memeberships
+# Table name: project_memberships
 #
 #  id         :integer          not null, primary key
 #  email      :string(255)
@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 
-class ProjectMemebership < ActiveRecord::Base
+class ProjectMembership < ActiveRecord::Base
   attr_accessible :email, :permission, :project_id, :type, :user_id
   belongs_to :user
   belongs_to :project

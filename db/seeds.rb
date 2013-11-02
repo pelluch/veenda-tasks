@@ -5,12 +5,14 @@ u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyD
 u.password = "grupo5"
 u.password_confirmation="grupo5"
 u.admin = true
+u.id = 40648
 u.save
 
 u = User.new({ :email => "pochsenius@gmail.com", :first_name => 'Paula', :last_name => 'Ochsenius', :api_token => 'e7cb1565c1eeae44cf7ca3edcaaa9ae0d4909696'})
 u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyDG"
 u.password = "grupo5"
 u.password_confirmation="grupo5"
+u.id = 40654
 u.admin = false
 u.save
 
@@ -19,6 +21,7 @@ u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyD
 u.password = "grupo5"
 u.password_confirmation="grupo5"
 u.admin = false
+u.id = 40655
 u.save
 
 u = User.new({ :email => "benjafellc@gmail.com", :first_name => 'Benjamín', :last_name => 'Fell', :api_token => '171a0b7382438566407b65157417815606b3ec58'})
@@ -26,12 +29,14 @@ u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyD
 u.password = "grupo5"
 u.password_confirmation="grupo5"
 u.admin = false
+u.id = 40650
 u.save
 
 u = User.new({ :email => "jpgiordanolorca@gmail.com", :first_name => 'Juan Pablo', :last_name => 'Giordano', :api_token => 'fcb2d2e3efbaaf732060d0aca06498d492ddc5f6'})
 u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyDG"
 u.password = "grupo5"
 u.password_confirmation="grupo5"
+u.id = 40652
 u.admin = false
 u.save
 
@@ -40,6 +45,7 @@ u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyD
 u.password = "grupo5"
 u.password_confirmation="grupo5"
 u.admin = false
+u.id = 40649
 u.save
 
 u = User.new({ :email => "arturonatho@gmail.com", :first_name => 'Arturo', :last_name => 'Natho', :api_token => '3d12b5c78ea1feaaa7c5f18d1a952765ee299b1e'})
@@ -47,12 +53,14 @@ u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyD
 u.password = "grupo5"
 u.password_confirmation="grupo5"
 u.admin = false
+u.id = 40653
 u.save
 
 u = User.new({ :email => "mjotaiza@gmail.com", :first_name => 'Jose', :last_name => 'Otaiza', :api_token => 'c7c1200efcebcc4e903b38923700d3437714774d'})
 u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyDG"
 u.password = "grupo5"
 u.password_confirmation="grupo5"
+u.id = 39957
 u.admin = false
 u.save
 
@@ -60,6 +68,7 @@ u = User.new({ :email => "ygoldfrid@gmail.com", :first_name => 'Yaniv', :last_na
 u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyDG"
 u.password = "grupo5"
 u.password_confirmation="grupo5"
+u.id = 40633
 u.admin = false
 u.save
 
@@ -67,6 +76,10 @@ u = User.new({ :email => "icfuenza@gmail.com", :first_name => 'Ignacio', :last_n
 u.password_digest = "$2a$10$4H4E5tdoLdQFUR6BHWgQVuZIjq/GbFWhQVFw4z8fnEkHkXk0XEyDG"
 u.password = "grupo5"
 u.password_confirmation="grupo5"
+u.id = 40651
 u.admin = false
 u.save
 
+p = Project.new({ :name => "Grupo5", :type => "Project", :url => "https://iic215420132.kanbanery.com/projects/39793"})
+p.id = 39793
+p.save
