@@ -10,6 +10,6 @@
 #
 
 class Workspace < ActiveRecord::Base
-	attr_accessor :name, :type	
-	
+	attr_accessible :name, :type	
+	has_many :projects
 end
