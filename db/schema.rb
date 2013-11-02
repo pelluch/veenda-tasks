@@ -106,9 +106,9 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
 
   create_table "tasks", :force => true do |t|
     t.integer  "column_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "title"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.text     "title"
     t.integer  "task_type_id"
     t.integer  "creator_id"
     t.text     "description"
@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
     t.boolean  "blocked"
     t.datetime "moved_at"
     t.string   "type"
-    t.boolean  "archived"
-    t.boolean  "iceboxed"
+    t.boolean  "archived",      :default => false
+    t.boolean  "iceboxed",      :default => false
   end
 
   create_table "updates", :force => true do |t|
