@@ -16,7 +16,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :api_token, :last_name, :name, :password, :email, :password_confirmation
+  attr_accessible :api_token, :first_name, :last_name, :name, :password, :email, :password_confirmation
 
   has_many :created_tasks, :class_name => "Task"
   has_many :owned_tasks, :class_name => "Task"
@@ -29,7 +29,9 @@ class User < ActiveRecord::Base
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :first_name, presence: true, length: { maximum: 50 }
+  validates :last_name, presence: true, length: { maximum: 50 }
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
@@ -39,6 +41,10 @@ class User < ActiveRecord::Base
   validates :api_token, :token => true,
                         uniqueness: { case_sensitive: false }
 
+
+    def full_name 
+      self.first_name + " " + self.last_name
+    end
 
     private
 
