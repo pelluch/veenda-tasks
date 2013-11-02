@@ -1,6 +1,24 @@
 VeendaTasks::Application.routes.draw do
 
 
+  resources :issues
+
+
+  resources :subtasks
+
+
+  resources :task_subscriptions
+
+
+  resources :estimates
+
+
+  resources :task_types
+
+
+  resources :project_memeberships
+
+
   get "admins/panel"
 
   match '/*path' => 'application#cors_preflight_check', :via => :options

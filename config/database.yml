@@ -15,8 +15,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: veenda-tasks_development
-  username: veenda-tasks
+  database: veenda_tasks_development
+  username: veenda_tasks
   pool: 5
   password:
 
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: veenda-tasks_test
+  database: veenda_tasks_test
   pool: 5
-  username: veenda-tasks
+  username: veenda_tasks
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: veenda-tasks_production
+  database: veenda_tasks_production
   pool: 5
-  username: veenda-tasks
+  username: veenda_tasks
   password:

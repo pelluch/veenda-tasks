@@ -2,14 +2,19 @@
 #
 # Table name: projects
 #
-#  id           :integer          not null, primary key
-#  workspace_id :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  name       :string(255)
+#  url        :string(255)
+#  type       :string(255)
 #
 
 class Project < ActiveRecord::Base
-  attr_accessible :workspace_id
-  belongs_to :project
+  attr_accessible :url, :type
   has_many :tasks
+  has_many :project_memberships
+  has_many :task_types
+  has_many :estimates
+  has_many :columns
 end

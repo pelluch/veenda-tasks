@@ -3,7 +3,6 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  name            :string(255)
 #  api_token       :string(255)
 #  last_name       :string(255)
 #  created_at      :datetime         not null
@@ -12,13 +11,19 @@
 #  email           :string(255)
 #  password_digest :string(255)
 #  admin           :boolean          default(FALSE)
+#  first_name      :string(255)
+#  type            :string(255)
 #
 
 class User < ActiveRecord::Base
   attr_accessible :api_token, :last_name, :name, :password, :email, :password_confirmation
-  has_many :tasks
-  has_many :updates
 
+  has_many :created_tasks, :class_name => "Task"
+  has_many :owned_tasks, :class_name => "Task"
+  has_many :updates
+  has_one :project_membership
+  has_many :task_subscriptions
+  has_many :comments
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
@@ -33,6 +38,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   validates :api_token, :token => true,
                         uniqueness: { case_sensitive: false }
+
 
     private
 

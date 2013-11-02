@@ -1,0 +1,2 @@
+class TaskSubscriptionsController < ApplicationController
+end
