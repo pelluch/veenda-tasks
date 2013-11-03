@@ -207,28 +207,11 @@ input {
 }
 
 .task_title {
-  font-weight: bold;
+    font-weight: bold;
 }
 #task_info {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  text-align: center;
-}
-div#task_priority {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #5D98FF;
-}
-
-div#task_type {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #5D98FF;
-}
-
-div#task_estimate {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #5D98FF;
-
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    background-color: #5D98FF;
 }
