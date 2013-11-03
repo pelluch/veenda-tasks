@@ -13,10 +13,10 @@ class TasksController < ApplicationController
     @title = "Tasks in progress"
     if @column
       @tasks = @column.tasks.paginate(page: params[:page])
+      render :index
     else
       redirect_to home_path
-    end
-    render :index
+    end    
   end
 
   private
