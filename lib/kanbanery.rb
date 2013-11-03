@@ -74,6 +74,32 @@ module Kanbanery
 	def self.delete_task(user) 
 	end 
 
+	def self.remove_protected(response)
+		resource = get_resource(response["type"])
+		extra_keys = []
+		if resource
+			resources_attrs = resource.new.attributes.keys
+			response.keys.each do |response_attr|
+				puts response_attr
+				if not resources_attrs.include?(response_attr)
+					extra_keys << response_attr
+				end
+			end
+		end
+		extra_keys.each do |extra_key|
+			response.delete(extra_key)
+		end
+		response
+	end
+
+	def self.get_resource(type)
+		if Module.const_defined?(type)
+			Object.const_get(type)
+		else
+			nil
+		end
+	end
+
 	def self.headers(api_token)
 		{ 'X-Kanbanery-ApiToken' => api_token }
 	end

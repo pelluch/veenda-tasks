@@ -24,7 +24,8 @@
 
 class Task < ActiveRecord::Base
   attr_accessible :column_id, :title, :task_type_id, :creator_id, :description, :estimate_id, :owner_id, :position,
-  				  :priority, :ready_to_pull, :blocked, :type
+  				  :priority, :ready_to_pull, :blocked, :type, :id, :created_at, :updated_at, :moved_at
+
   belongs_to :column
   belongs_to :task_type
   belongs_to :estimate

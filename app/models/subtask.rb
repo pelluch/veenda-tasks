@@ -3,7 +3,7 @@
 # Table name: subtasks
 #
 #  id         :integer          not null, primary key
-#  body       :string(255)
+#  body       :text
 #  task_id    :integer
 #  creator_id :integer
 #  completed  :boolean
@@ -13,7 +13,9 @@
 #
 
 class Subtask < ActiveRecord::Base
-  attr_accessible :body, :completed, :creator_id, :task_id, :type
+  attr_accessible :body, :completed, :creator_id, :task_id, :type,
+  				  :created_at, :updated_at, :id
+
   belongs_to :creator, :class_name => "User", :foreign_key => :creator_id
   belongs_to :task
 end

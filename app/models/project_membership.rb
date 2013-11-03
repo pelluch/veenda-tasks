@@ -13,7 +13,8 @@
 #
 
 class ProjectMembership < ActiveRecord::Base
-  attr_accessible :email, :permission, :project_id, :type, :user_id
+  attr_accessible :email, :permission, :project_id, :type, :user_id, :created_at, :updated_at,
+  			      :id
   belongs_to :user
   belongs_to :project
 end

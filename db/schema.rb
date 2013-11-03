@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "task_id"
-    t.string   "description"
+    t.text   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
   end
 
   create_table "subtasks", :force => true do |t|
-    t.string   "body"
+    t.text   "body"
     t.integer  "task_id"
     t.integer  "creator_id"
     t.boolean  "completed"
@@ -130,7 +130,6 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
     t.integer  "resource_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.string   "auth_token"
     t.integer  "user_id"
   end
 

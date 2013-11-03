@@ -11,7 +11,7 @@
 #
 
 class TaskSubscription < ActiveRecord::Base
-  attr_accessible :task_id, :type, :user_id
+  attr_accessible :task_id, :type, :user_id, :id, :created_at, :updated_at
   belongs_to :task
   belongs_to :user
 end

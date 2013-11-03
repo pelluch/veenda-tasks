@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  task_id     :integer
-#  description :string(255)
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

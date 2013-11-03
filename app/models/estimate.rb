@@ -12,6 +12,6 @@
 #
 
 class Estimate < ActiveRecord::Base
-  attr_accessible :label, :project_id, :type, :value
+  attr_accessible :label, :project_id, :type, :value, :id, :created_at, :updated_at
   belongs_to :project
 end

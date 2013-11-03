@@ -13,6 +13,6 @@
 #
 
 class TaskType < ActiveRecord::Base
-  attr_accessible :color_code, :name, :position, :project_id, :type
+  attr_accessible :color_code, :name, :position, :project_id, :type, :id, :created_at, :updated_at
   belongs_to :project
 end

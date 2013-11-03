@@ -11,7 +11,7 @@
 #
 
 class Project < ActiveRecord::Base
-  attr_accessible :url, :type, :name
+  attr_accessible :url, :type, :name, :id, :created_at, :updated_at
   has_many :tasks
   has_many :project_memberships
   has_many :task_types

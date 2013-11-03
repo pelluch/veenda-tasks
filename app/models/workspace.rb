@@ -10,11 +10,6 @@
 #
 
 class Workspace < ActiveRecord::Base
-
-	require 'httparty'
-	
-	attr_accessible :name, :type	
-
-	
-
+	require 'httparty'	
+	attr_accessible :name, :type, :id, :created_at, :updated_at
 end

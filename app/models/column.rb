@@ -15,7 +15,8 @@
 
 
 class Column < ActiveRecord::Base
-	attr_accessible :project_id, :type, :position, :capacity, :fixed, :name
+	attr_accessible :project_id, :type, :position, :capacity, :fixed, :name, :id,
+				    :created_at, :updated_at
 	belongs_to :project
 	has_many :tasks
 

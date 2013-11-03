@@ -4,7 +4,11 @@ class TasksController < ApplicationController
 
   def index
     @column = Column.find_by_name("In progress")
-    @tasks = @column.tasks.paginate(page: params[:page])
+    if @column
+      @tasks = @column.tasks.paginate(page: params[:page])
+    else
+      redirect_to home_path
+    end
   end
 
 

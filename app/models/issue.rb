@@ -12,6 +12,6 @@
 #
 
 class Issue < ActiveRecord::Base
-  attr_accessible :resolved, :task_id, :type, :url
+  attr_accessible :resolved, :task_id, :type, :url, :id, :created_at, :updated_at
   belongs_to :task
 end

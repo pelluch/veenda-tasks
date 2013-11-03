@@ -16,11 +16,10 @@ class UpdatesController < ApplicationController
 	def destroy		
 		puts params
 		type = params["resource"]["type"]
-		resource = get_resource(type)
+		resource = Kanbanery::get_resource(type)		
 		if resource
-			puts "The resource #{type} exists"
-		else
-			puts "The resource #{type} DOES NOT exist"
+			concrete_record = resource.find(params["resource"]["id"])
+			concrete_record.destroy
 		end
 		render json: { :status => "ok" }, status: :ok
 	end
@@ -29,11 +28,9 @@ class UpdatesController < ApplicationController
 	def create		
 		puts params
 		type = params["resource"]["type"]
-		resource = get_resource(type)
+		resource = Kanbanery::get_resource(type)
 		if resource
-			puts "The resource #{type} exists"
-		else
-			puts "The resource #{type} DOES NOT exist"
+			resource.create(params["resource"])
 		end
 		render json: { :status => "ok" }, status: :ok
 	end
@@ -42,22 +39,11 @@ class UpdatesController < ApplicationController
 	def update		
 		puts params
 		type = params["resource"]["type"]
-		resource = get_resource(type)
+		resource = Kanbanery::get_resource(type)
 		if resource
-			puts "The resource #{type} exists"
-		else
-			puts "The resource #{type} DOES NOT exist"
+			concrete_record = resource.find(params["resource"]["id"])
+			concrete_record.update_attributes(params["resource"])
 		end
 		render json: { :status => "ok" }, status: :ok	
-	end
-
-	private
-
-	def get_resource(type)
-		if Module.const_defined?(type)
-			Object.const_get(type)
-		else
-			nil
-		end
 	end
 end

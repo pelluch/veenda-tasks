@@ -16,7 +16,8 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :api_token, :first_name, :last_name, :name, :password, :email, :password_confirmation
+  attr_accessible :id, :api_token, :first_name, :last_name, :name, :password, :email, :password_confirmation, 
+                  :created_at, :updated_at, :type
 
   has_many :created_tasks, :class_name => "Task", :foreign_key => :creator_id
   has_many :owned_tasks, :class_name => "Task", :foreign_key => :owner_id

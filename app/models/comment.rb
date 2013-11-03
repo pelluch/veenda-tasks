@@ -12,7 +12,8 @@
 #
 
 class Comment < ActiveRecord::Base
-  attr_accessible :task_id, :body, :author_id, :type
+  attr_accessible :task_id, :body, :author_id, :type, :id, :created_at, :updated_at
+  
   belongs_to :author, :class_name => "User", :foreign_key => :author_id
   belongs_to :task
 end
