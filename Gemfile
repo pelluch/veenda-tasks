@@ -18,6 +18,7 @@ end
 gem 'rails_12factor'
 gem 'httparty'
 gem 'json'
+gem 'meta_request'
 
 group :development do
   gem 'annotate', '2.5.0'
