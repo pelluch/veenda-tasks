@@ -17,4 +17,5 @@ class TaskType < ActiveRecord::Base
   attr_accessible :color_code, :name, :position, :project_id, :type, :id,
   				  :created_at, :updated_at, :color_hex
   belongs_to :project
+  has_many :tasks
 end
