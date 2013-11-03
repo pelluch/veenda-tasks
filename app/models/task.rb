@@ -18,8 +18,6 @@
 #  blocked       :boolean
 #  moved_at      :datetime
 #  type          :string(255)
-#  archived      :boolean          default(FALSE)
-#  iceboxed      :boolean          default(FALSE)
 #
 
 class Task < ActiveRecord::Base

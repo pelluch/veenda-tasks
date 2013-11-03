@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131103022026) do
-
-  create_table "bugs", :force => true do |t|
-    t.integer  "task_id"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 20131103024908) do
 
   create_table "columns", :force => true do |t|
     t.integer  "project_id"
@@ -52,10 +45,10 @@ ActiveRecord::Schema.define(:version => 20131103022026) do
   create_table "issues", :force => true do |t|
     t.string   "url"
     t.integer  "task_id"
-    t.boolean  "resolved"
+    t.boolean  "resolved",   :default => false
     t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "project_memberships", :force => true do |t|
@@ -117,8 +110,8 @@ ActiveRecord::Schema.define(:version => 20131103022026) do
 
   create_table "tasks", :force => true do |t|
     t.integer  "column_id"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.text     "title"
     t.integer  "task_type_id"
     t.integer  "creator_id"
@@ -131,8 +124,6 @@ ActiveRecord::Schema.define(:version => 20131103022026) do
     t.boolean  "blocked"
     t.datetime "moved_at"
     t.string   "type"
-    t.boolean  "archived",      :default => false
-    t.boolean  "iceboxed",      :default => false
   end
 
   create_table "updates", :force => true do |t|

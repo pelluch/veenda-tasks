@@ -6,7 +6,9 @@ module Kanbanery
 	WORKSPACE_ID = 29577
 	PROJECT_ID = 39793
 	PROJECT_URL = "https://#{WORKSPACE_NAME}.kanbanery.com/api/v1/projects/#{PROJECT_ID}"
-
+	ICEBOX_ID = 269877
+	ARCHIVE_ID = 269878
+	
 	def self.get_memberships(user)
 		get_url = "#{PROJECT_URL}/memberships.json"
 		response = HTTParty.get(get_url, {:headers => headers(user.api_token)})

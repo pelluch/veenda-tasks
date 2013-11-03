@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  url        :string(255)
 #  task_id    :integer
-#  resolved   :boolean
+#  resolved   :boolean          default(FALSE)
 #  type       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

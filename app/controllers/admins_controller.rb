@@ -2,7 +2,7 @@ class AdminsController < UsersController
 
 	require 'httparty'
 
-	before_filter :admin_user,     only: [:panel, :init_workspace]
+	before_filter :admin_user
 
 	def panel
 	end
@@ -95,36 +95,27 @@ class AdminsController < UsersController
 			if tasks 
 				tasks.each do |t|
 					t = Kanbanery::remove_protected(t)
-					task = Task.new(t)
-					task.archived = false
-					task.iceboxed = false
-					task.save
+					task = Task.create(t)
 				end	
-				else
+			else
 				success = false		
 			end
 			tasks = Kanbanery::get_archived_tasks(current_user)
 			if tasks 
 				tasks.each do |t|
 					t = Kanbanery::remove_protected(t)
-					task = Task.new(t)
-					task.archived = true
-					task.iceboxed = false
-					task.save
+					task = Task.create(t)
 				end		
-				else 
+			else 
 				success = false	
 			end
 			tasks = Kanbanery::get_icebox_tasks(current_user)
 			if tasks 
 				tasks.each do |t|
 					t = Kanbanery::remove_protected(t)
-					task = Task.new(t)
-					task.archived = false
-					task.iceboxed = true
-					task.save
+					task = Task.create(t)
 				end		
-				else 
+			else 
 				success = false	
 			end
 			if success
