@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20131103033537) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "task_id"
-    t.boolean  "finished"
+    t.boolean  "finished",   :default => false
   end
 
   create_table "project_memberships", :force => true do |t|

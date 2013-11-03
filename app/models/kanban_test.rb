@@ -10,7 +10,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  task_id      :integer
-#  finished     :boolean
+#  finished     :boolean          default(FALSE)
 #
 
 class KanbanTest < ActiveRecord::Base
