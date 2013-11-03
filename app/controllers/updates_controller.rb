@@ -15,7 +15,7 @@ class UpdatesController < ApplicationController
 	# DELETE
 	def destroy		
 		puts params
-		type = params["resources"]["type"]
+		type = params["resource"]["type"]
 		resource = get_resource(type)
 		if resource
 			puts "The resource #{type} exists"
@@ -28,7 +28,7 @@ class UpdatesController < ApplicationController
 	# POST
 	def create		
 		puts params
-		type = params["resources"]["type"]
+		type = params["resource"]["type"]
 		resource = get_resource(type)
 		if resource
 			puts "The resource #{type} exists"
@@ -41,7 +41,7 @@ class UpdatesController < ApplicationController
 	# PUT
 	def update		
 		puts params
-		type = params["resources"]["type"]
+		type = params["resource"]["type"]
 		resource = get_resource(type)
 		if resource
 			puts "The resource #{type} exists"
