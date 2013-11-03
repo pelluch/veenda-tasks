@@ -2,8 +2,11 @@
   <div class="row-fluid tasks">
     <div class="span1"><%= gravatar_for task.owner, size: 52 %></div>
     <div class="span7"><%= task.title %></div>
-    <div class="span2"><%= '#' + task.id.to_s %></div>
-    <div class="span2" id="task_info"><%= task.task_type.name %></div>
+    <div class="span2 github"><%= github_for task, size: 52 %><p><%= "\##{task.id}" %></p></div>
+    <div class="span2 task_info" id="<%= task.id %>"><p><%= task.task_type.name.downcase.capitalize %></p></div>
   </div>
+  <script type="text/javascript">
+  	$('#' + '<%= task.id %>').css('background-color', '#' + '<%= task.task_type.color_hex %>');
+  </script>
 <% end %>
 

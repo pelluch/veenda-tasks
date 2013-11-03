@@ -202,16 +202,22 @@ input {
         margin-top: 5px;
         margin-bottom: 5px;
     };    
- 
-
 }
 
 .task_title {
     font-weight: bold;
 }
-#task_info {
+.task_info {
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
-    background-color: #5D98FF;
+    color: white;
+    p {
+      margin-top: 10%;
+      margin-bottom: 10%;
+    }
+}
+
+.github {
+  text-align: center;
 }

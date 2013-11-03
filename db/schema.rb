@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131103065519) do
+ActiveRecord::Schema.define(:version => 20131103210205) do
 
   create_table "attachments", :force => true do |t|
     t.string   "download_path"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20131103065519) do
     t.string   "type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "color_hex"
   end
 
   create_table "tasks", :force => true do |t|

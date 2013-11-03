@@ -44,7 +44,37 @@ class AdminsController < UsersController
 			if task_types 
 				task_types.each do |t|
 					t = Kanbanery::remove_protected(t)
-					TaskType.create(t)
+					task = TaskType.new(t)
+					if task.color_hex == ""
+						if task.color_code == 0
+							task.color_hex = "ff3333"
+						elsif task.color_code == 1
+							task.color_hex = "ff8533"
+						elsif task.color_code == 2
+							task.color_hex = "ffad33"
+						elsif task.color_code == 3
+							task.color_hex = "ffd633"
+						elsif task.color_code == 4
+							task.color_hex = "ffff33"
+						elsif task.color_code == 5
+							task.color_hex = "bceb2f"
+						elsif task.color_code == 6
+							task.color_hex = "2bd62b"
+						elsif task.color_code == 7
+							task.color_hex = "2babd6"
+						elsif task.color_code == 8
+							task.color_hex = "2b72d6"
+						elsif task.color_code == 9
+							task.color_hex = "472bd6"
+						elsif task.color_code == 10
+							task.color_hex = "9d2bd6"
+						elsif task.color_code == 11
+							task.color_hex = "e02d96"
+						else
+							task.color_hex = "ffffff"
+						end							
+					end
+					task.save
 				end
 				flash[:success] = "Sucessfully initialized task types"
 			redirect_to admins_panel_path
