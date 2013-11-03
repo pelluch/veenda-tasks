@@ -18,11 +18,12 @@
 #  blocked       :boolean
 #  moved_at      :datetime
 #  type          :string(255)
+#  deadline      :datetime
 #
 
 class Task < ActiveRecord::Base
   attr_accessible :column_id, :title, :task_type_id, :creator_id, :description, :estimate_id, :owner_id, :position,
-  				  :priority, :ready_to_pull, :blocked, :type, :id, :created_at, :updated_at, :moved_at
+  				  :priority, :ready_to_pull, :blocked, :type, :id, :created_at, :updated_at, :moved_at, :deadline
 
   belongs_to :column
   belongs_to :task_type
@@ -36,5 +37,6 @@ class Task < ActiveRecord::Base
   has_many :comments
   has_many :issues
   has_many :task_events
+  has_many :attachments
 
 end

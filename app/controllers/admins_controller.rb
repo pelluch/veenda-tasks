@@ -5,8 +5,18 @@ class AdminsController < UsersController
 	before_filter :admin_user
 
 	def panel
+		render :panel
 	end
 
+	def tests
+		@column = Column.find_by_name("Ready for Testing")
+	    if @column
+	      @tasks = @column.tasks.paginate(page: params[:page], :per_page => 10).order('position ASC')
+	      render :tests
+	    else
+	      redirect_to home_path
+	    end    
+	end
 
 	def init_memberships
 		if ProjectMembership.count == 0

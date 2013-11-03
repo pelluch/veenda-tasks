@@ -1,6 +1,9 @@
 VeendaTasks::Application.routes.draw do
 
 
+  resources :attachments
+
+
   resources :task_events
   resources :issues
   resources :subtasks
@@ -32,7 +35,7 @@ VeendaTasks::Application.routes.draw do
   match '/admins/init_comments', to: 'admins#init_comments'
   match '/admins/init_subtasks', to: 'admins#init_comments'
   match '/admins/init_issues', to: 'admins#init_issues'
-
+  match '/admins/tests', to: 'admins#tests'
 
   #match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

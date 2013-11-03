@@ -197,22 +197,35 @@ input {
 
 /* tasks index */
 .tasks {
-  list-style: none;
-  margin: 0;
-  li.outer {
-    overflow: auto;
-    padding: 10px 0;
     border-top: 1px solid $grayLighter;
-    &:last-child {
-      border-bottom: 1px solid $grayLighter;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      li.title {
-        font-weight: bold;
-      }
-    }
-  }
+    div {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    };    
+ 
+
+}
+
+#task_info {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+div#task_priority {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #5D98FF;
+}
+
+div#task_type {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #5D98FF;
+}
+
+div#task_estimate {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #5D98FF;
 
 }

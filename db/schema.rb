@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131103033537) do
+ActiveRecord::Schema.define(:version => 20131103065519) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "download_path"
+    t.text     "file"
+    t.string   "file_content_type"
+    t.string   "file_file_name"
+    t.integer  "file_file_size"
+    t.boolean  "is_previewable"
+    t.string   "preview_path"
+    t.integer  "task_id"
+    t.string   "type"
+    t.integer  "uploader_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "columns", :force => true do |t|
     t.integer  "project_id"
@@ -56,10 +71,10 @@ ActiveRecord::Schema.define(:version => 20131103033537) do
     t.integer  "developer_id"
     t.string   "description"
     t.string   "result"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "task_id"
-    t.boolean  "finished",   :default => false
+    t.boolean  "finished",     :default => false
   end
 
   create_table "project_memberships", :force => true do |t|
@@ -135,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20131103033537) do
     t.boolean  "blocked"
     t.datetime "moved_at"
     t.string   "type"
+    t.datetime "deadline"
   end
 
   create_table "updates", :force => true do |t|
