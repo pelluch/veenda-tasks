@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_one :project_membership
   has_many :task_subscriptions
   has_many :comments
+  has_many :task_events
+  
   has_secure_password
 
   before_save { |user| user.email = email.downcase }

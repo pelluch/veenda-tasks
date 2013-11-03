@@ -1,6 +1,9 @@
 VeendaTasks::Application.routes.draw do
 
 
+  resources :task_events
+
+
   resources :issues
   resources :subtasks
   resources :task_subscriptions

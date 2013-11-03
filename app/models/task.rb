@@ -37,5 +37,6 @@ class Task < ActiveRecord::Base
   has_many :subtasks
   has_many :comments
   has_many :issues
+  has_many :task_events
 
 end

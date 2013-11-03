@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131102222349) do
+ActiveRecord::Schema.define(:version => 20131103022026) do
 
   create_table "bugs", :force => true do |t|
     t.integer  "task_id"
-    t.text   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -77,13 +77,24 @@ ActiveRecord::Schema.define(:version => 20131102222349) do
   end
 
   create_table "subtasks", :force => true do |t|
-    t.text   "body"
+    t.text     "body"
     t.integer  "task_id"
     t.integer  "creator_id"
     t.boolean  "completed"
     t.string   "type"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "task_events", :force => true do |t|
+    t.integer  "task_id"
+    t.text     "message"
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "column_id"
+    t.text     "title"
+    t.datetime "created_at", :null => false
   end
 
   create_table "task_subscriptions", :force => true do |t|

@@ -1,0 +1,2 @@
+class TaskEventsController < ApplicationController
+end

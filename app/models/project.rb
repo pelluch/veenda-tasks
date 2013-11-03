@@ -17,5 +17,6 @@ class Project < ActiveRecord::Base
   has_many :task_types
   has_many :estimates
   has_many :columns
-
+  has_many :task_events
+  
 end
