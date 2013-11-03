@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   require 'will_paginate/array'
-  before_filter :signed_in_user, only: [:index]
+  before_filter :signed_in_user, only: [:index, :summary]
 
   def index
     @tasks = Task.all.paginate(page: params[:page])
