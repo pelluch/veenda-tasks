@@ -2,8 +2,6 @@ VeendaTasks::Application.routes.draw do
 
 
   resources :task_events
-
-
   resources :issues
   resources :subtasks
   resources :task_subscriptions
@@ -22,7 +20,7 @@ VeendaTasks::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/*path' => 'application#cors_preflight_check', :via => :options
-  root to: 'tasks#index'
+  root to: 'tasks#summary'
 
   match '/admins/panel', to: 'admins#panel'
   match '/admins/init_memberships', to: 'admins#init_memberships'
