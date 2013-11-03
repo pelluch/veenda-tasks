@@ -197,25 +197,36 @@ input {
 
 /* tasks index */
 .tasks {
-    border-top: 1px solid $grayLighter;
-    div {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    };    
+    border-top: 1px solid $grayLighter;   
+}
+.tasks div {
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.tasks div.task_info
+{
+   margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: white;
+    p {
+      margin-top: 10px;
+      
+    }
+}
+
+.tasks div.title
+{
+   margin-top:20px;
 }
 
 .task_title {
     font-weight: bold;
 }
 .task_info {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    text-align: center;
-    color: white;
-    p {
-      margin-top: 10%;
-      margin-bottom: 10%;
-    }
+   
 }
 
 .github {

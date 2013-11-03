@@ -45,7 +45,7 @@ class AdminsController < UsersController
 				task_types.each do |t|
 					t = Kanbanery::remove_protected(t)
 					task = TaskType.new(t)
-					if task.color_hex == ""
+					if task.color_code < 12
 						if task.color_code == 0
 							task.color_hex = "ff3333"
 						elsif task.color_code == 1

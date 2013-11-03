@@ -1,8 +1,8 @@
 <% if task.owner %>
   <div class="row-fluid tasks">
     <div class="span1"><%= gravatar_for task.owner, size: 52 %></div>
-    <div class="span7"><%= task.title %></div>
-    <div class="span2 github"><%= github_for task, size: 52 %><p><%= "\##{task.id}" %></p></div>
+    <div class="span7 title"><%= task.title.capitalize %></div>
+    <div class="span2 github"><%= github_for task, size: 40 %><p><%= "\##{task.id}" %></p></div>
     <div class="span2 task_info" id="<%= task.id %>"><p><%= task.task_type.name.downcase.capitalize %></p></div>
   </div>
   <script type="text/javascript">
