@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tester:</b>
+  <%= @kanban_test.tester_id %>
+</p>
+
+<p>
+  <b>Developer:</b>
+  <%= @kanban_test.developer_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @kanban_test.description %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%= @kanban_test.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_kanban_test_path(@kanban_test) %> |
+<%= link_to 'Back', kanban_tests_path %>

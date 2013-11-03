@@ -1,0 +1,12 @@
+<% provide(:title, 'Issues') %>
+<h1>Current Issues</h1>
+
+<% if @issues.count == 0 %>
+	<h2>You currently have no issues assigned</h2>
+<% else %>
+	<%= will_paginate %>
+	<ul class="issues">
+	  <%= render @issues %>
+	</ul>
+	<%= will_paginate %>
+<% end %>

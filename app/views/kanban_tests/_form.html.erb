@@ -1,10 +1,10 @@
-<%= form_for(@veenda_test) do |f| %>
-  <% if @veenda_test.errors.any? %>
+<%= form_for(@kanban_test) do |f| %>
+  <% if @kanban_test.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@veenda_test.errors.count, "error") %> prohibited this veenda_test from being saved:</h2>
+      <h2><%= pluralize(@kanban_test.errors.count, "error") %> prohibited this kanban_test from being saved:</h2>
 
       <ul>
-      <% @veenda_test.errors.full_messages.each do |msg| %>
+      <% @kanban_test.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

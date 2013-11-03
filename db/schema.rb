@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131103024908) do
+ActiveRecord::Schema.define(:version => 20131103033537) do
 
   create_table "columns", :force => true do |t|
     t.integer  "project_id"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(:version => 20131103024908) do
     t.string   "type"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "kanban_tests", :force => true do |t|
+    t.integer  "tester_id"
+    t.integer  "developer_id"
+    t.string   "description"
+    t.string   "result"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "task_id"
+    t.boolean  "finished"
   end
 
   create_table "project_memberships", :force => true do |t|
@@ -149,15 +160,6 @@ ActiveRecord::Schema.define(:version => 20131103024908) do
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-
-  create_table "veenda_tests", :force => true do |t|
-    t.integer  "tester_id"
-    t.integer  "developer_id"
-    t.string   "description"
-    t.string   "result"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-  end
 
   create_table "workspaces", :force => true do |t|
     t.datetime "created_at", :null => false

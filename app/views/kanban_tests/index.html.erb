@@ -1,0 +1,12 @@
+<% provide(:title, 'Tests') %>
+<h1>Current Tests Assigned</h1>
+
+<% if @kanban_tests.count == 0 %>
+  <h2>You currently have no tests assigned</h2>
+<% else %>
+  <%= will_paginate %>
+  <ul class="tests">
+    <%= render @kanban_tests %>
+  </ul>
+  <%= will_paginate %>
+<% end %>

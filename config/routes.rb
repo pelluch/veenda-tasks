@@ -10,7 +10,7 @@ VeendaTasks::Application.routes.draw do
   resources :estimates
   resources :task_types
   resources :project_memberships
-  resources :veenda_tests
+  resources :kanban_tests
   resources :bugs
   resources :users
   resources :subtasks
