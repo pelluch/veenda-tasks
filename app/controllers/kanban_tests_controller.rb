@@ -17,6 +17,7 @@ class KanbanTestsController < ApplicationController
       flash[:success] = "Test created"
       redirect_to @kanban_test
     else
+      @users = User.all
       render 'new'
     end
   end
@@ -30,11 +31,4 @@ class KanbanTestsController < ApplicationController
   def show
     @kanban_test = KanbanTest.find(params[:id])
   end
-
-  private 
-
-  def admin_user
-  	redirect_to(root_url) unless current_user.admin?
-  end
-
 end

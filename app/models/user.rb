@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
   has_many :tester_tests, :class_name => "KanbanTest", :foreign_key => :tester_id
   has_many :developer_tests, :class_name => "KanbanTest", :foreign_key => :tester_id
   has_many :attachments, :class_name => "Attachment", :foreign_key => :uploader_id
+  has_many :created_issues, :class_name => "Issue", :foreign_key => :creator_id
 
   has_secure_password
 

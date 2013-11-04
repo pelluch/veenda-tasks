@@ -18,6 +18,7 @@ VeendaTasks::Application.routes.draw do
   resources :comments
   resources :tasks do
     resources :kanban_tests, shallow: true
+    resources :issues, shallow: true
   end
   resources :columns
   resources :workspaces
@@ -28,6 +29,8 @@ VeendaTasks::Application.routes.draw do
   root to: 'tasks#summary'
 
   get '/kanban_tests', to: 'kanban_tests#index'
+  get '/issues', to: 'issues#index'
+  
   match '/admins/panel', to: 'admins#panel'
   match '/admins/init_memberships', to: 'admins#init_memberships'
   match '/admins/init_task_types', to: 'admins#init_task_types'

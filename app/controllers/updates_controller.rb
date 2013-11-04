@@ -1,10 +1,6 @@
 class UpdatesController < ApplicationController
 
-	def index
-	end
-	
-	def show
-	end
+	before_filter :authenticate_token
 
 	# DELETE
 	def destroy		
@@ -15,7 +11,7 @@ class UpdatesController < ApplicationController
 			concrete_record = resource.find(params["resource"]["id"])
 			concrete_record.destroy
 		end
-		render json: { :status => "ok" }, status: :ok
+		render :nothing => true, status: :ok, :content_type => 'text/html'
 	end
 
 	# POST
@@ -26,7 +22,7 @@ class UpdatesController < ApplicationController
 		if resource
 			resource.create(params["resource"])
 		end
-		render json: { :status => "ok" }, status: :ok
+		render :nothing => true, status: :ok, :content_type => 'text/html'
 	end
 
 	# PUT
@@ -38,6 +34,13 @@ class UpdatesController < ApplicationController
 			concrete_record = resource.find(params["resource"]["id"])
 			concrete_record.update_attributes(params["resource"])
 		end
-		render json: { :status => "ok" }, status: :ok	
+		render :nothing => true, status: :ok, :content_type => 'text/html'
 	end
+
+	def authenticate_token
+		unless params["auth_token"] == Kanbanery::AUTH_TOKEN
+			render :nothing => true, :status => :unauthorized, :content_type => 'text/html'
+		end
+	end
+
 end

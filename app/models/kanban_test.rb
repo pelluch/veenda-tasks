@@ -21,4 +21,6 @@ class KanbanTest < ActiveRecord::Base
   belongs_to :developer, :class_name => "User", :foreign_key => :developer_id
   belongs_to :task
 
+  validates_presence_of :description
+
 end

@@ -8,6 +8,7 @@ module Kanbanery
 	PROJECT_URL = "https://#{WORKSPACE_NAME}.kanbanery.com/api/v1/projects/#{PROJECT_ID}"
 	ICEBOX_ID = 269877
 	ARCHIVE_ID = 269878
+	AUTH_TOKEN = "8493c8a995d4c90767c529e87b844b09e5a5e542"
 	
 	def self.get_memberships(user)
 		get_url = "#{PROJECT_URL}/memberships.json"

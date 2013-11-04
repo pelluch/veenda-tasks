@@ -240,3 +240,11 @@ select#kanban_test_tester_id {
 textarea#kanban_test_description {
   height: 200px;
 }
+
+textarea#issue_description {
+  height: 200px;
+}
+
+.issue a {
+  margin-left: 10px;
+}

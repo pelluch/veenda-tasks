@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	
-  #protect_from_forgery secret: "8493c8a995d4c90767c529e87b844b09e5a5e542"
   include SessionsHelper
+  
   
   after_filter :cors_set_access_control_headers
 
@@ -25,4 +25,20 @@ class ApplicationController < ActionController::Base
 	  headers['Access-Control-Max-Age'] = "1728000"
 	end
 
+	def admin_user
+  		redirect_to(root_url) unless current_user.admin?
+  	end
+
+  	def signed_in_user
+      	unless signed_in?
+       	 store_location
+         redirect_to signin_url, notice: "Please sign in."
+   	    end
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+    
 end
