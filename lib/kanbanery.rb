@@ -83,7 +83,6 @@ module Kanbanery
 		if resource
 			resources_attrs = resource.new.attributes.keys
 			response.keys.each do |response_attr|
-				puts response_attr
 				if not resources_attrs.include?(response_attr)
 					extra_keys << response_attr
 				end

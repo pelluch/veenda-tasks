@@ -4,7 +4,7 @@ class UpdatesController < ApplicationController
 
 	# DELETE
 	def destroy		
-		puts params
+		logger.debug { "Destroy params: #{params}" }
 		type = params["resource"]["type"]
 		resource = Kanbanery::get_resource(type)		
 		if resource
@@ -16,7 +16,7 @@ class UpdatesController < ApplicationController
 
 	# POST
 	def create		
-		puts params
+		logger.debug { "Create params: #{params}" }
 		type = params["resource"]["type"]
 		resource = Kanbanery::get_resource(type)
 		if resource
@@ -27,7 +27,7 @@ class UpdatesController < ApplicationController
 
 	# PUT
 	def update		
-		puts params
+		logger.debug { "Update params: #{params}" }
 		type = params["resource"]["type"]
 		resource = Kanbanery::get_resource(type)
 		if resource
@@ -39,6 +39,7 @@ class UpdatesController < ApplicationController
 
 	def authenticate_token
 		unless params["auth_token"] == Kanbanery::AUTH_TOKEN
+			logger.debug { "Unauthorized update: #{params}" }
 			render :nothing => true, :status => :unauthorized, :content_type => 'text/html'
 		end
 	end
