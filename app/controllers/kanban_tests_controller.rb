@@ -11,8 +11,7 @@ class KanbanTestsController < ApplicationController
     if @kanban_test.update_attributes(params[:kanban_test])
       @kanban_test.finished = true
       @kanban_test.save
-      @column = Column.find_by_name("Done")
-      Kanbanery::move_task(@kanban_test.task.id, @column.id, current_user)
+      Kanbanery::move_task(@kanban_test.task.id, current_user)
       flash[:success] = "Test finished"      
       redirect_to kanban_tests_path
     else
@@ -32,6 +31,7 @@ class KanbanTestsController < ApplicationController
     @kanban_test.developer_id = @task.creator.id
     @kanban_test.task_id = @task.id
     if @kanban_test.save
+      Kanbanery::move_task(@kanban_test.task.id, current_user)
       flash[:success] = "Test created"
       redirect_to @kanban_test
     else

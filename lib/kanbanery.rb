@@ -71,15 +71,16 @@ module Kanbanery
 	def self.get_task(user)
 	end
 
-	def self.move_task(task_id, column_id, user)
+	def self.move_task(task_id, user)
 		put_url = "https://#{WORKSPACE_NAME}.kanbanery.com/api/v1/tasks/#{task_id}.json"
 		headers = headers(user.api_token)
-		headers['Content-Type'] = 'application/json'
-		response = HTTParty.put(url, 
+
+		response = HTTParty.put(put_url, 
 	    :body => { 
-	    			:column_id => column_id,
-	    			:id => task_id
-	             }.to_json,
+	    			:task => {
+	    				:location => "next_column"
+	    			}
+	             }.to_query,
 	    :headers => headers
 	    )
 	end
