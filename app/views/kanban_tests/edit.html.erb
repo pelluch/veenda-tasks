@@ -1,6 +1,30 @@
-<h1>Editing kanban_test</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @kanban_test %> |
-<%= link_to 'Back', kanban_tests_path %>
+<% provide(:title, 'Test') %>
+<h1>Test #<%= @kanban_test.task.id %> </h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for(@kanban_test) do |f| %>
+      
+      <%= render 'error_messages' %>
+      <div class="row">      
+      <div class="col-md-12">
+        <%= f.label :description %>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-md-11 col-md-offset-1">
+          <%= @kanban_test.description %>
+        </div>
+      </div>
+      <%= f.label :result %>
+      <%= f.text_area :result %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.submit "Validate test", class: "btn btn-large btn-success" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.submit "Fail test", class: "btn btn-large btn-danger" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

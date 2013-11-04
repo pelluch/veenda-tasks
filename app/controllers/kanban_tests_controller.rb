@@ -6,6 +6,24 @@ class KanbanTestsController < ApplicationController
     @kanban_tests = current_user.tester_tests.paginate(page: params[:page])
   end
 
+  def update
+    @kanban_test = KanbanTest.find(params[:id])
+    if @kanban_test.update_attributes(params[:kanban_test])
+      @kanban_test.finished = true
+      @kanban_test.save
+      @column = Column.find_by_name("Done")
+      Kanbanery::move_task(@kanban_test.task.id, @column.id, current_user)
+      flash[:success] = "Test finished"      
+      redirect_to kanban_tests_path
+    else
+      render 'edit'
+    end    
+  end
+
+  def edit
+    @kanban_test = KanbanTest.find(params[:id])
+  end
+
   def create
     @kanban_test = KanbanTest.new(params[:kanban_test])
     @kanban_test.created_at = Time.now
