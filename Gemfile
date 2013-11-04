@@ -3,13 +3,13 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.15'
-gem 'bootstrap-sass', '2.1'
+gem 'bootstrap-sass-rails', '3.0.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'will_paginate', '3.0.5'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 group :production do
   gem 'pg'
@@ -25,13 +25,13 @@ group :development do
 end
 
 group :assets do
-  gem 'sass-rails',   '3.2.5'
-  gem 'coffee-rails', '3.2.2'
-  gem 'uglifier', '1.2.3'
+  gem 'sass-rails',   '3.2.6'
+  #gem 'coffee-rails', '3.2.2'
+  gem 'uglifier', '2.3.0'
 end
 
-gem 'jquery-rails'
-
+gem 'jquery-rails', '3.0.4'
+gem 'thor', '0.18.1'
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,10 +1,10 @@
 <% if task.owner %>
-	<div class="row-fluid tasks">
-		<div class="span1"><%= gravatar_for task.owner, size: 26 %></div>
-		<div class="span7"><%= task.title %></div>
-		<div class="span2"><%= '#' + task.id.to_s %></div>
-		<div class="span1"><%= link_to "Assign", new_task_kanban_test_path(task), class: "btn btn-success" %></div>
-		<div class="span1 issue"><%= link_to "Issue", new_task_issue_path(task), class: "btn btn-danger" %></div>
+	<div class="row tasks">
+		<div class="col-md-1"><%= gravatar_for task.owner, size: 26 %></div>
+		<div class="col-md-7"><%= task.title %></div>
+		<div class="col-md-2"><%= '#' + task.id.to_s %></div>
+		<div class="col-md-1"><%= link_to "Assign", new_task_kanban_test_path(task), class: "btn btn-default btn-success" %></div>
+		<div class="col-md-1 issue"><%= link_to "Issue", new_task_issue_path(task), class: "btn btn-default btn-danger" %></div>
 	</div>
 <% end %>
 

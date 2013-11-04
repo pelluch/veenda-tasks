@@ -1,8 +1,8 @@
 <% provide(:title, 'Testing Administration') %>
 <h1>Tasks ready for testing</h1>
-
+<div class="row pag-navbar">
 <%= will_paginate @tasks %>
-
+</div>
 <% @tasks.each do |task| %>
 	<%= render 'test', :task => task %>
 <% end %>

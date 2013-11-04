@@ -1,6 +1,6 @@
 <% if @kanban_test.errors.any? %>
   <div id="error_explanation">
-    <div class="alert alert-error">
+    <div class="alert alert-danger">
       The form contains <%= pluralize(@kanban_test.errors.count, "error") %>.
     </div>
     <ul>

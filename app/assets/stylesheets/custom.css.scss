@@ -1,8 +1,11 @@
-@import "bootstrap";
+@import "twitter/bootstrap";
 
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$grayLight: #ffffff;
+$grayDarker: #313131;
+$grayLighter: #B4B4B4;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -11,8 +14,9 @@ $grayMediumLight: #eaeaea;
 }
 
 /* home */
-.hero-unit {
+.jumbotron {
   background-color: white;
+  text-align: center;
 }
 
 /* universal */
@@ -247,4 +251,28 @@ textarea#issue_description {
 
 .issue a {
   margin-left: 10px;
+}
+
+#header {
+  margin-top: 30px;
+}
+#logo {
+  margin-top: 10px;
+  img {
+    margin-left: 60px;
+  }
+}
+
+.pag-navbar {
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu li>a:hover, .dropdown-menu li>a:focus, .dropdown-submenu:hover>a {
+  background-color: #0081c2;
+  color: #ffffff;
 }
