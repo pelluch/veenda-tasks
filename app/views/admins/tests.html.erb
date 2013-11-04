@@ -3,6 +3,8 @@
 <div class="row pag-navbar">
 <%= will_paginate @tasks %>
 </div>
+<div class="container" id="task_index">
 <% @tasks.each do |task| %>
 	<%= render 'test', :task => task %>
 <% end %>
+</div>

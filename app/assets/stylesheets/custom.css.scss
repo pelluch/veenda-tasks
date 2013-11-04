@@ -44,6 +44,21 @@ textarea {
   }
 }
 
+/* navigation */
+.pag-navbar {
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown-menu li>a:hover, .dropdown-menu li>a:focus, .dropdown-submenu:hover>a {
+  background-color: #0081c2;
+  color: #ffffff;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -168,10 +183,10 @@ input {
   }
 }
 
-.field_with_errors {
+/*.field_with_errors {
   @extend .control-group;
   @extend .error;
-}
+}*/
 
 /* miscellaneous */
 
@@ -199,6 +214,15 @@ input {
   }
 }
 
+.users_index {
+  width: 80%;
+}
+
+.index_avatar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
 /* tasks index */
 .tasks {
     border-top: 1px solid $grayLighter;   
@@ -211,31 +235,43 @@ input {
 
 .tasks div.task_info
 {
-   margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 0px;
     text-align: center;
     color: white;
     p {
-      margin-top: 10px;
+      margin-top: 5px;
       
     }
 }
 
 .tasks div.title
 {
-   margin-top:20px;
+   margin-top:10px;
+   font-size: 1em;
+   margin-bottom: 10px;
+}
+
+.tasks div.task_id
+{
+   margin-top:15px;
+   font-size: 1em;
+   margin-bottom: 10px;
+}
+
+div#task_index {
+  width: 80%;
 }
 
 .task_title {
     font-weight: bold;
 }
-.task_info {
-   
-}
 
 .github {
   text-align: center;
 }
+
+/* kantan_tests */
 
 select#kanban_test_tester_id {
   height: auto;
@@ -244,6 +280,8 @@ select#kanban_test_tester_id {
 textarea#kanban_test_description {
   height: 200px;
 }
+
+/* issues */
 
 textarea#issue_description {
   height: 200px;
@@ -263,16 +301,8 @@ textarea#issue_description {
   }
 }
 
-.pag-navbar {
-  text-align: center;
-}
 
-.pagination {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
-.dropdown-menu li>a:hover, .dropdown-menu li>a:focus, .dropdown-submenu:hover>a {
-  background-color: #0081c2;
-  color: #ffffff;
+input {
+  padding: 7px;
 }

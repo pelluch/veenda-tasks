@@ -1,9 +1,10 @@
-<li>
-  <%= gravatar_for user, size: 52 %>
-  <%= link_to user.full_name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-</li>
-
+<div class="col-md-3 index_avatar" >
+	<div class="row">
+		<div class="col-md-6 pull-left">
+			<%= gravatar_for user, size: 52 %>
+		</div>
+		<div class="col-md-6 user-index-name">
+			<%= user.full_name %>
+		</div>
+	</div>
+</div>
