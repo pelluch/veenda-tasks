@@ -11,12 +11,14 @@ VeendaTasks::Application.routes.draw do
   resources :estimates
   resources :task_types
   resources :project_memberships
-  resources :kanban_tests
+  #resources :kanban_tests
   resources :bugs
   resources :users
   resources :subtasks
   resources :comments
-  resources :tasks
+  resources :tasks do
+    resources :kanban_tests, shallow: true
+  end
   resources :columns
   resources :workspaces
   resources :projects
@@ -25,6 +27,7 @@ VeendaTasks::Application.routes.draw do
   match '/*path' => 'application#cors_preflight_check', :via => :options
   root to: 'tasks#summary'
 
+  get '/kanban_tests', to: 'kanban_tests#index'
   match '/admins/panel', to: 'admins#panel'
   match '/admins/init_memberships', to: 'admins#init_memberships'
   match '/admins/init_task_types', to: 'admins#init_task_types'

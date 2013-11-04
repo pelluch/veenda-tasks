@@ -5,8 +5,6 @@
   <h2>You currently have no tests assigned</h2>
 <% else %>
   <%= will_paginate %>
-  <ul class="tests">
-    <%= render @kanban_tests %>
-  </ul>
+  <%= render @kanban_tests %>
   <%= will_paginate %>
 <% end %>

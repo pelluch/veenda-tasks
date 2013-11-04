@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Tester:</b>
   <%= @kanban_test.tester_id %>
@@ -15,11 +13,15 @@
   <%= @kanban_test.description %>
 </p>
 
-<p>
-  <b>Result:</b>
-  <%= @kanban_test.result %>
-</p>
+
+<% if @kanban_test.result %>
+	<p>
+		<b>Result:</b>
+		<%= @kanban_test.result %>
+	</p>
+<% end %>
 
 
-<%= link_to 'Edit', edit_kanban_test_path(@kanban_test) %> |
+
+<%= link_to 'Edit', edit_kanban_test_path(@kanban_test) %>
 <%= link_to 'Back', kanban_tests_path %>

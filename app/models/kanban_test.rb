@@ -14,7 +14,7 @@
 #
 
 class KanbanTest < ActiveRecord::Base
-  attr_accessible :id, :tester_id, :developer_id, :description, :result, 
+  attr_accessible :tester_id, :developer_id, :description, :result, 
   				  :created_at, :updated_at, :task_id, :finished
   
   belongs_to :tester, :class_name => "User", :foreign_key => :tester_id

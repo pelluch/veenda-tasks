@@ -1,5 +1,19 @@
-<h1>New kanban_test</h1>
+<% provide(:title, 'New test') %>
+<h1>New test</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @kanban_test, url: {action: "create"} do |f| %>
+      
+      <%= render 'error_messages' %>
+      <%= f.label :tester_id %>
+      <% testers = @users.map { |user| [user.full_name, user.id] } %>
+      <%= f.select :tester_id, options_for_select(testers) %>
 
-<%= link_to 'Back', kanban_tests_path %>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.submit "Create test", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

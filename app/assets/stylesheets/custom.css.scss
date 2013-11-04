@@ -232,3 +232,11 @@ input {
 .github {
   text-align: center;
 }
+
+select#kanban_test_tester_id {
+  height: auto;
+}
+
+textarea#kanban_test_description {
+  height: 200px;
+}
