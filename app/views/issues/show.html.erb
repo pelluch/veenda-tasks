@@ -1,0 +1,24 @@
+<p>
+  <b>Creator:</b>
+  <%= @issue.creator.full_name %>
+</p>
+
+<p>
+  <b>Task owner:</b>
+  <%= @issue.task_owner.full_name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @issue.description %>
+</p>
+
+
+<p>
+  <b>Resolved:</b>
+  <%= @issue.resolved %>
+</p>
+
+
+<%= link_to 'Edit', edit_issue_path(@issue) %>
+<%= link_to 'Back', issues_path %>

@@ -1,0 +1,16 @@
+<% provide(:title, 'New issue') %>
+<h1>New issue</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @issue, url: {action: "create"} do |f| %>
+      
+      <%= render 'error_messages' %>
+
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.submit "Create test", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
