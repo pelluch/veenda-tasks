@@ -26,12 +26,10 @@ end
 
 group :assets do
   gem 'sass-rails',   '3.2.6'
-  #gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '2.3.0'
 end
 
 gem 'jquery-rails', '3.0.4'
 gem 'thor', '0.18.1'
-# To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
